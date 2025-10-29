@@ -1,143 +1,87 @@
-🚀 Job Tracker Dashboard
+# 🚀 Job Tracker Dashboard
 
-A full-stack Job Tracking Application built with Spring Boot (Java), ReactJS, MySQL, and Docker Compose.
-This project helps users manage job applications efficiently — add, view, filter, and track statuses (Applied, Interview, Offer, Rejected) with a futuristic dashboard UI.
+A full-stack **Job Tracking Application** built to help you manage job applications efficiently. Organize, track, and visualize applications with a sleek, futuristic dashboard UI.
 
-🧭 Table of Contents
+---
 
-Overview
+## 📖 Overview
 
-Tech Stack
+The **Job Tracker Dashboard** lets you add, view, filter, and track job applications with statuses like *Applied*, *Interview*, *Offer*, and *Rejected*. It features a responsive frontend, secure REST API, and a fully containerized setup using Docker Compose.
 
-Architecture
+---
 
-Features
+## 🛠️ Tech Stack
 
-Backend Setup (Spring Boot)
+| **Frontend**              | **Backend**               | **DevOps**            |
+|---------------------------|---------------------------|-----------------------|
+| ReactJS 18                | Spring Boot 3.x           | Docker & Docker Compose |
+| TailwindCSS               | Java 17                   |                       |
+| Lucide React (icons)      | Spring Data JPA           |                       |
+| Framer Motion (animations)| MySQL 8                   |                       |
+| Axios (API calls)         | Lombok                    |                       |
 
-Frontend Setup (ReactJS)
+---
 
-Docker Setup (Full Stack)
+## 🧱 Architecture
+Frontend (ReactJS) ↔ REST API (Spring Boot) ↔ MySQL Database
+text---
 
-Environment Variables
+## ✨ Features
 
-API Endpoints
+- ✅ Add, update, delete, and view job applications
+- ✅ Filter by status (*Applied*, *Interview*, *Offer*, *Rejected*)
+- ✅ Animated dashboard with status metrics
+- ✅ Responsive design (desktop + mobile)
+- ✅ RESTful API with clean structure
+- ✅ Fully containerized with Docker
+- ✅ Auto-generated DB schema and sample data
 
-Sample Data
+---
 
-Screenshots
+## ⚙️ Setup Instructions
 
-Future Enhancements
+### Backend (Spring Boot)
+*Location*: `job-tracker-backend/`
 
-🧩 Overview
+1. **Prerequisites**:
+   - Java 17+
+   - Maven 3.9+
+   - MySQL 8.0+ (or use Docker)
 
-The Job Tracker Dashboard lets you organize and visualize your job applications in one place.
-It includes a responsive, animated dashboard with filters and statistics cards, integrated with a secure Spring Boot REST API and a MySQL database.
+2. **Configure Database**:
+   Update `src/main/resources/application.properties`:
+   ```properties
+   spring.datasource.url=jdbc:mysql://localhost:3306/jobtracker
+   spring.datasource.username=tracker_user
+   spring.datasource.password=tracker_pass
+   spring.jpa.hibernate.ddl-auto=update
+   spring.jpa.show-sql=true
 
-Frontend and backend are fully containerized with Docker Compose, so setup is seamless across systems.
+Run:
+bashmvn spring-boot:run
+Backend runs at http://localhost:8080.
 
-🛠️ Tech Stack
-
-Frontend:
-
-ReactJS 18
-
-TailwindCSS
-
-Lucide React (icons)
-
-Framer Motion (animations)
-
-Axios (API calls)
-
-Backend:
-
-Spring Boot 3.x
-
-Java 17
-
-Spring Data JPA
-
-MySQL 8
-
-Lombok
-
-DevOps:
-
-Docker & Docker Compose
-
-🧱 Architecture
-frontend (ReactJS)
-    |
-    |---> REST API (Spring Boot)
-             |
-             |---> MySQL Database
-
-✨ Features
-
-✅ Add, update, delete, and view job applications
-✅ Filter by job status (Applied, Interview, Offer, Rejected)
-✅ Animated dashboard with status colors and metrics
-✅ Responsive layout (desktop + mobile)
-✅ RESTful API with clean structure
-✅ Fully Dockerized setup (MySQL + Backend + Frontend)
-✅ Auto-creation of DB schema and sample data
-
-⚙️ Backend Setup (Spring Boot)
-
-Location: job-tracker-backend/
-
-1️⃣ Prerequisites
-
-Java 17+
-
-Maven 3.9+
-
-MySQL 8.0+ (or Docker)
-
-2️⃣ Configure Database
-
-Set credentials in src/main/resources/application.properties:
-
-spring.datasource.url=jdbc:mysql://localhost:3306/jobtracker
-spring.datasource.username=tracker_user
-spring.datasource.password=tracker_pass
-spring.jpa.hibernate.ddl-auto=update
-spring.jpa.show-sql=true
-
-3️⃣ Run the App
-mvn spring-boot:run
-
-
-Backend will start at http://localhost:8080
-
-⚛️ Frontend Setup (ReactJS)
-
+Frontend (ReactJS)
 Location: job-tracker-frontend/
 
-1️⃣ Prerequisites
+Prerequisites:
 
 Node.js 18+
-
 npm or yarn
 
-2️⃣ Install dependencies
-npm install
 
-3️⃣ Start development server
-npm start
+Install Dependencies:
+bashnpm install
 
+Run:
+bashnpm start
+Frontend runs at http://localhost:3000.
 
-Frontend runs at http://localhost:3000
+Docker (Full Stack)
+Run the entire application with Docker Compose.
 
-🐳 Docker Setup (Full Stack)
-
-To run everything in containers:
-
-1️⃣ Make sure docker-compose.yml exists in the root folder:
-
-version: '3.8'
-
+Ensure docker-compose.yml is in the root folder:
+yamlversion: '3.8'
 services:
   mysql:
     image: mysql:8.0
@@ -185,39 +129,31 @@ networks:
 volumes:
   mysql_data:
 
+Run:
+bashdocker compose up --build
 
-2️⃣ Run everything:
+Access:
 
-docker compose up --build
+Frontend: http://localhost:3000
+Backend: http://localhost:8080/api/jobs
+MySQL: localhost:3307
 
 
-✅ Open:
-
-Frontend → http://localhost:3000
-
-Backend → http://localhost:8080/api/jobs
-
-MySQL → localhost:3307
-
-🔑 Environment Variables
-Variable	Description	Default
-MYSQL_ROOT_PASSWORD	MySQL root password	rootpass
-MYSQL_DATABASE	Database name	jobtracker
-MYSQL_USER	MySQL app user	tracker_user
-MYSQL_PASSWORD	MySQL app user password	tracker_pass
-SPRING_DATASOURCE_URL	JDBC URL	jdbc:mysql://mysql:3306/jobtracker
-SPRING_JPA_HIBERNATE_DDL_AUTO	DB schema handling	update
 📡 API Endpoints
-Method	Endpoint	Description
-GET	/api/jobs	Get all jobs
-GET	/api/jobs/{id}	Get job by ID
-POST	/api/jobs	Add a new job
-PUT	/api/jobs/{id}	Update existing job
-DELETE	/api/jobs/{id}	Delete job
 
-Example POST body:
+MethodEndpointDescription
+GET/api/jobs
+Get all jobs
+GET/api/jobs/{id}
+Get job by ID
+POST/api/jobsAdd a new job
+PUT/api/jobs/{id}
+Update existing job
+DELETE/api/jobs/{id}
+Delete job
 
-{
+Example POST Body:
+json{
   "company": "Google",
   "position": "Senior Software Engineer",
   "title": "Full Stack Developer",
@@ -225,38 +161,32 @@ Example POST body:
   "location": "Dublin, Ireland"
 }
 
-🧰 Sample Data (auto-loaded)
-
-Add a data.sql file under src/main/resources/:
-
-INSERT INTO job (company, position, title, status, location, applied_date)
+🧰 Sample Data
+Auto-loaded via src/main/resources/data.sql:
+sqlINSERT INTO job (company, position, title, status, location, applied_date)
 VALUES 
-('Google', 'Software Engineer', 'Backend Developer', 'Applied', 'Dublin', CURRENT_DATE()),
-('Amazon', 'Frontend Engineer', 'React Developer', 'Interview', 'Berlin', CURRENT_DATE()),
-('SAP', 'Full Stack Engineer', 'Java + React', 'Offer', 'Munich', CURRENT_DATE());
+  ('Google', 'Software Engineer', 'Backend Developer', 'Applied', 'Dublin', CURRENT_DATE()),
+  ('Amazon', 'Frontend Engineer', 'React Developer', 'Interview', 'Berlin', CURRENT_DATE()),
+  ('SAP', 'Full Stack Engineer', 'Java + React', 'Offer', 'Munich', CURRENT_DATE());
 
 🖼️ Screenshots
-
 Dashboard View
-Futuristic animated UI with filters and status metrics.
-<img width="1909" height="962" alt="image" src="https://github.com/user-attachments/assets/c819246e-dbe8-4491-a502-2ae505d42d07" />
-<img width="1912" height="951" alt="image" src="https://github.com/user-attachments/assets/d4a2648f-fd27-43a5-a4a9-9ada918ac9a4" />
-
-
-
+Futuristic UI with filters and status metrics.
+<img src="screenshots/dashboard.png" alt="Dashboard">
 Add Job Form
 Simple and elegant job entry form.
+<img src="screenshots/add-job-form.png" alt="Add Job Form">
 
 🧠 Future Enhancements
 
-✅ JWT-based authentication (Spring Security)
-✅ Multi-user login
-✅ Pagination and search filters
-✅ Charts (Recharts integration)
-✅ Export data to Excel / PDF
-✅ CI/CD using GitHub Actions
+🔒 JWT-based authentication (Spring Security)
+👥 Multi-user login
+📄 Pagination and advanced search filters
+📊 Charts (Recharts integration)
+📤 Export data to Excel/PDF
+🚀 CI/CD with GitHub Actions
+
 
 👨‍💻 Author
-
 Praveen Sakthivel
-Full Stack Developer — Java | ReactJS | Spring Boot | Docker
+Full Stack Developer | Java | ReactJS | Spring Boot | Docker
