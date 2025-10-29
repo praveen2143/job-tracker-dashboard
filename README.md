@@ -239,6 +239,10 @@ VALUES
 
 Dashboard View
 Futuristic animated UI with filters and status metrics.
+<img width="1909" height="962" alt="image" src="https://github.com/user-attachments/assets/c819246e-dbe8-4491-a502-2ae505d42d07" />
+<img width="1912" height="951" alt="image" src="https://github.com/user-attachments/assets/d4a2648f-fd27-43a5-a4a9-9ada918ac9a4" />
+
+
 
 Add Job Form
 Simple and elegant job entry form.
