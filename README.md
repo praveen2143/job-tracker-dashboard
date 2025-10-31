@@ -81,6 +81,7 @@ Frontend runs at http://localhost:3000.
 Run the entire application with Docker Compose.
 
 Ensure docker-compose.yml is in the root folder:
+```bash
 yamlversion: '3.8'
 services:
   mysql:
@@ -131,8 +132,8 @@ volumes:
 
 Run:
 bash docker compose up --build
-
-** Access:**
+```
+### Access: 
 
 Frontend: http://localhost:3000
 Backend: http://localhost:8080/api/jobs
@@ -142,7 +143,7 @@ MySQL: localhost:3307
 
 ```bash
 docker compose up --build -d
-
+```
 Then visit:
 
 Frontend → http://localhost
