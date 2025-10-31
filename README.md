@@ -59,25 +59,25 @@ text---
 
 Run:
 bashmvn spring-boot:run
-Backend runs at http://localhost:8080.
+### Backend runs at http://localhost:8080.
 
 Frontend (ReactJS)
 Location: job-tracker-frontend/
 
-Prerequisites:
+1.**Prerequisites:**
 
 Node.js 18+
 npm or yarn
 
 
-Install Dependencies:
+2.**Install Dependencies:**
 bashnpm install
 
 Run:
 bashnpm start
 Frontend runs at http://localhost:3000.
 
-Docker (Full Stack)
+### Docker (Full Stack)
 Run the entire application with Docker Compose.
 
 Ensure docker-compose.yml is in the root folder:
@@ -132,7 +132,7 @@ volumes:
 Run:
 bash docker compose up --build
 
-Access:
+** Access:**
 
 Frontend: http://localhost:3000
 Backend: http://localhost:8080/api/jobs
