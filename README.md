@@ -59,9 +59,9 @@ text---
 
 Run:
 bashmvn spring-boot:run
-### Backend runs at http://localhost:8080.
+Backend runs at http://localhost:8080.
 
-Frontend (ReactJS)
+### Frontend (ReactJS)
 Location: job-tracker-frontend/
 
 1.**Prerequisites:**
