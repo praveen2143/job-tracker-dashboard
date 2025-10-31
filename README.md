@@ -130,7 +130,7 @@ volumes:
   mysql_data:
 
 Run:
-bashdocker compose up --build
+bash docker compose up --build
 
 Access:
 
@@ -141,8 +141,8 @@ MySQL: localhost:3307
 ## 🚀 How to Build & Run
 
 ```bash
-docker build -t jobtracker-full .
-docker run -p 80:80 -p 8080:8080 -p 3306:3306 jobtracker-full
+docker compose up --build -d
+
 Then visit:
 
 Frontend → http://localhost
@@ -150,19 +150,6 @@ Frontend → http://localhost
 API → http://localhost/api/jobs
 
 DB → MySQL localhost:3306 (user: user, password: password)
-
-##💾 Save & Share
-Export image to a portable file:
-
-bash
-Copy code
-docker save -o jobtracker-full.tar jobtracker-full
-Import on another machine:
-
-bash
-Copy code
-docker load -i jobtracker-full.tar
-docker run -p 80:80 jobtracker-full
 
 ##📡 API Endpoints
 
