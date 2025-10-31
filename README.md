@@ -144,7 +144,7 @@ MySQL: localhost:3307
 ```bash
 docker compose up --build -d
 ```
-Then visit:
+## Access
 
 Frontend → http://localhost
 
@@ -152,8 +152,8 @@ API → http://localhost/api/jobs
 
 DB → MySQL localhost:3306 (user: user, password: password)
 
-##📡 API Endpoints
-
+## API Endpoints
+```bash
 MethodEndpointDescription
 GET/api/jobs
 Get all jobs
@@ -164,8 +164,8 @@ PUT/api/jobs/{id}
 Update existing job
 DELETE/api/jobs/{id}
 Delete job
-
-##Example POST Body:
+```
+## Example POST Body:
 json{
   "company": "Google",
   "position": "Senior Software Engineer",
@@ -174,7 +174,7 @@ json{
   "location": "Dublin, Ireland"
 }
 
-##🧰 Sample Data
+## Sample Data
 Auto-loaded via src/main/resources/data.sql:
 sqlINSERT INTO job (company, position, title, status, location, applied_date)
 VALUES 
@@ -182,7 +182,7 @@ VALUES
   ('Amazon', 'Frontend Engineer', 'React Developer', 'Interview', 'Berlin', CURRENT_DATE()),
   ('SAP', 'Full Stack Engineer', 'Java + React', 'Offer', 'Munich', CURRENT_DATE());
 
-##🖼️ Screenshots
+## Screenshots
 Dashboard View
 Futuristic UI with filters and status metrics.
 <img width="1915" height="938" alt="image" src="https://github.com/user-attachments/assets/c069da31-20c5-496e-af31-62989818644a" />
@@ -192,7 +192,7 @@ Simple and elegant job entry form.
 <img width="1916" height="954" alt="image" src="https://github.com/user-attachments/assets/79f8bddf-1b76-4e7f-bce1-e7c03d28fa50" />
 
 
-🧠 Future Enhancements
+## Future Enhancements
 
 🔒 JWT-based authentication (Spring Security)
 👥 Multi-user login
@@ -202,6 +202,6 @@ Simple and elegant job entry form.
 🚀 CI/CD with GitHub Actions
 
 
-👨‍💻 Author
+## Author
 Praveen Sakthivel
 Full Stack Developer | Java | ReactJS | Spring Boot | Docker
